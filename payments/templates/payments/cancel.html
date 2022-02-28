@@ -1,0 +1,9 @@
+{% extends 'store/base.html' %}
+{% block content %}
+<div class="content-section">
+    <h4 class="text-dark">Sorry, something went wrong.</h4>
+    <a class="text-info" href="{% url 'payments:top_up' %}"> Start over</a>
+    <br>
+    <a  class="text-info" href="{% url 'store:homepage' %}"> Go to the main page</a>
+</div>
+{% endblock content %}

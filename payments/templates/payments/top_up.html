@@ -1,0 +1,19 @@
+{% extends 'store/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block content %}
+    <div class="content-section">
+
+        <form class="form-group" action="{% url 'payments:top_up' %}" method="POST">
+            {% csrf_token %}
+            {% crispy form %}
+        </form>
+
+    </div>
+
+{% block script %}
+<script src="{% static 'scripts/topUpForm.js' %}"></script>
+{% endblock %}
+
+{% endblock content %}

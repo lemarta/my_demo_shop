@@ -1,0 +1,7 @@
+Django==3.2.12
+django-crispy-forms==1.14.0
+django-environ==0.8.1
+fontawesomefree==6.0.0
+marshmallow==3.14.1
+stripe==2.66.0
+weasyprint==54.1

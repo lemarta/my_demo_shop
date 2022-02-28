@@ -1,0 +1,29 @@
+<p class="text-info">Numer faktury: {{ invoice.name }}</p>
+<p>Data transakcji: {{ invoice.date_created }}</p>
+<br>
+
+<p>Sprzedawca:</p>
+<p>{{ company.name }}</p>
+<p>ul. {{ company.street }} {{ company.no }}</p>
+<p>{{ company.post_code }} {{ company.town }}</p>
+<p>NIP {{ company.NIP }}</p>
+<br>
+
+<p>Nabywca:</p>
+<p>{{ invoice.address.name }} {{ invoice.address.surname }}</p>
+<p>{{ invoice.address.street_and_number }}</p>
+<p>{{ invoice.address.postal_code }} {{ invoice.address.city }}, {{ invoice.address.country }}</p>
+<p>{{ invoice.user.email }}</p>
+<br>
+
+<p>Produkt:</p>
+<p>Doładowanie za {{ invoice.topup.amount_full_units }} {{ invoice.topup.currency }}</p>
+<br>
+
+<p>Dziękujemy za skorzystanie z naszych usług</p>
+<p>Team My Demo Shop</p>
+<br>
+
+ <p>by <a href="https://github.com/lemarta"><i class="fa-brands fa-github"></i> lemarta</a>, 2022</p>
+
+
