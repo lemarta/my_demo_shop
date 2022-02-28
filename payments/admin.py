@@ -17,7 +17,7 @@ def export_to_csv(modeladmin, request, queryset):
     for obj in queryset:
         writer.writerow([getattr(obj, field) for field in field_names])
     return response
-export_to_csv.short_description = "Download selected as .csv"
+export_to_csv.short_description = "Download data as .csv"
 
 def get_invoice(obj):
     return mark_safe('<a href="{}">PDF</a>'.format(reverse('payments:invoice_pdf', args=[obj.pk])))
@@ -34,11 +34,11 @@ def get_topups_invoice(obj):
 class TopUpAdmin(admin.ModelAdmin):
     list_display = ['id', get_topups_invoice, 'date_created', 'date_updated', 'user', 'amount', 'is_successful', 'currency', 'live_mode']
     list_filter = ['id', 'date_created', 'date_updated', 'user', 'amount', 'is_successful', 'currency', 'live_mode']
-    actions = [export_to_csv]
 
 class InvoiceAdmin(admin.ModelAdmin):
     list_display = ['id', get_invoice, 'date_created', 'name', 'user', 'address', 'topup']
-    list_filter = ['id', 'date_created', 'name', 'user', 'address', 'topup']  
+    list_filter = ['id', 'date_created', 'name', 'user', 'address', 'topup']
+    actions = [export_to_csv] 
 
 
 admin.site.register(TopUp, TopUpAdmin)
