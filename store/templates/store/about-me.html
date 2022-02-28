@@ -28,7 +28,7 @@
             in your console and <a href="{% url 'users:login' %}" target="_blank" class="text-info">log in</a> to explore functionalities of this website.</p>
         <p class="text-dark">To explore functionalities, you must create a <a href="https://stripe.com" target="_blank" class="text-info">Stripe</a> account. 
             Make sure your <a href="https://dashboard.stripe.com/test/apikeys" target="_blank" class="text-info">Stripe test keys</a> and 
-            <a href="https://stripe.com/docs/webhooks" target="_blank" class="text-info">Webhook key</a> are in .env file, and that you are 
+            <a href="https://stripe.com/docs/webhooks" target="_blank" class="text-info">Webhook key</a> are in .env file (you may have to restart the server if you're adding them now), and that you are 
             <a href="https://stripe.com/docs/stripe-cli/webhooks#forward-events" target="_blank" class="text-info">listening for events</a>
              - it's very important, because otherwise your balance will not increase after payment and the invoice won't be created. When using Stripe CLI use the following command:
              <p><i>stripe listen --forward-to localhost:8000/payments/webhooks/stripe/</i></p>
