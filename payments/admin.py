@@ -26,7 +26,6 @@ def get_topups_invoice(obj):
     invoice = Invoice.objects.filter(topup=obj.pk).last()
     if invoice:
         if obj.is_successful:
-            
             return get_invoice(invoice)
         else:
             return '-'

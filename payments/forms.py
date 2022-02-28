@@ -1,6 +1,3 @@
-from distutils.command.clean import clean
-from operator import add
-from re import template
 from django import forms
 
 from crispy_forms.helper import FormHelper

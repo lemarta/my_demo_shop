@@ -8,7 +8,7 @@ from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, redirect
 from django.views import View
 from django.views.decorators.csrf import csrf_exempt
-from django.views.generic import TemplateView, ListView, FormView
+from django.views.generic import TemplateView, FormView
 from django.urls import reverse
 from django.utils.decorators import method_decorator
 

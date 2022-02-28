@@ -1,15 +1,14 @@
 import weasyprint
 
-from datetime import datetime
 from io import BytesIO
 from os import path
 from re import match, search
 
-from django.db import models
 from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.core.mail import EmailMessage
 from django.core.validators import MinValueValidator
+from django.db import models
 from django.db.models import F
 from django.http import HttpResponse
 from django.shortcuts import render
@@ -19,7 +18,7 @@ from users.models import User
 
 # Create your models here.
 
-mail_sender = settings.DEFAULT_FROM_EMAIL
+mail_sender = settings.EMAIL_SENDER
 
 company_details = settings.COMPANY_DETAILS
 
@@ -55,7 +54,7 @@ class TopUp(models.Model):
     def save_id_and_status(self, event_body):
         self.payment_intent_id = event_body.id
         if event_body.status == 'succeeded':
-            self.is_successful == True
+            self.is_successful = True
         return self
 
     def save_email(self, event_body):

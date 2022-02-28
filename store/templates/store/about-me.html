@@ -29,11 +29,13 @@
         <p class="text-dark">To explore functionalities, you must create a <a href="https://stripe.com" target="_blank" class="text-info">Stripe</a> account. 
             Make sure your <a href="https://dashboard.stripe.com/test/apikeys" target="_blank" class="text-info">Stripe test keys</a> and 
             <a href="https://stripe.com/docs/webhooks" target="_blank" class="text-info">Webhook key</a> are in .env file, and that you are 
-            <a href="https://stripe.com/docs/stripe-cli/webhooks#forward-events" target="_blank" class="text-info">listening for events</a> - it's very important, because otherwise your balance will not increase after payment. 
-            If everything looks good, you can <a href="{% url 'payments:top_up' %}" target="_blank" class="text-info">top up your account</a>.</p> 
+            <a href="https://stripe.com/docs/stripe-cli/webhooks#forward-events" target="_blank" class="text-info">listening for events</a>
+             - it's very important, because otherwise your balance will not increase after payment and the invoice won't be created. When using Stripe CLI use the following command:
+             <p><i>stripe listen --forward-to localhost:8000/payments/webhooks/stripe/</i></p>
+            <p>If everything looks good, you can <a href="{% url 'payments:top_up' %}" target="_blank" class="text-info">top up your account</a>.</p> 
         <p class="text-dark">If this is the first time you're providing data for invoice, you will be prompted to provide your name and address. 
             After that you will always have a choice: use again the most recent address associated with your account or provide a new one.</p>
-        <p class="text-dark">To have a successfull card payment, use card 
+        <p class="text-dark">To perform a successfull card payment, use card number
             <strong>4242 4242 4242 4242</strong>, valid until any date in the future, and with any 3 digits as its CVC code. 
             There are many more available test scenarios - more about that 
             <a href="https://stripe.com/docs/testing" target="_blank" class="text-info">here</a>.</p>
